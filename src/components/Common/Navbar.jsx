@@ -11,16 +11,16 @@ import { categories } from '../../services/apis'
 import { useState } from 'react'
 import {IoIosArrowDropdownCircle} from "react-icons/io"
 
-const subLinks = [
-    {
-        title: "python",
-        link:"/catalog/python"
-    },
-    {
-        title: "web dev",
-        link:"/catalog/web-development"
-    },
-];
+// const subLinks = [
+//     {
+//         title: "python",
+//         link:"/catalog/python"
+//     },
+//     {
+//         title: "web dev",
+//         link:"/catalog/web-development"
+//     },
+// ];
 
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
     const {totalItems} = useSelector( (state) => state.cart )
     const location = useLocation();
 
-    const [ssubLinks, setSsubLinks]  = useState([]);
+    const [subLinks, setSsubLinks]  = useState([]);
 
     const fetchSublinks = async() => {
         try{
@@ -90,7 +90,7 @@ const Navbar = () => {
                                     subLinks.length ? (
                                             subLinks.map( (subLink, index) => (
                                                 <Link to={`${subLink.link}`} key={index}>
-                                                    <p>{subLink.title}</p>
+                                                    <p>{subLink.name}</p>
                                                 </Link>
                                             ) )
                                     ) : (<div></div>)
