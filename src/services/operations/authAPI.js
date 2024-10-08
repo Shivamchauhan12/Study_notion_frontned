@@ -5,6 +5,7 @@ import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
+import axios from "axios"
 
 const {
   SENDOTP_API,
@@ -181,3 +182,5 @@ export function logout(navigate) {
     navigate("/")
   }
 }
+ 
+
