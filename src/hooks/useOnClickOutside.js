@@ -10,6 +10,8 @@ export default function useOnClickOutside(ref, handler) {
         return;
       }
       // Otherwise, call the provided handler function
+      console.log(ref.current.contains(event.target),ref.current)
+      console.log(event)
       handler(event);
     };
 
